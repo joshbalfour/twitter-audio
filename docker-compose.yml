@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+
+  server:
+    image: mhart/alpine-node
+    volumes:
+      - ./src:/src
+    working_dir: /src
+    command: "npm run start"
+    env_file: ./secrets.env

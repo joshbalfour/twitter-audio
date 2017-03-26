@@ -1,0 +1,20 @@
+{
+  "name": "listen-to-twitter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshbalfour/twitter-audio.git"
+  },
+  "author": "Josh Balfour <josh@joshbalfour.co.uk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshbalfour/twitter-audio/issues"
+  },
+  "homepage": "https://github.com/joshbalfour/twitter-audio#readme"
+}

@@ -18,7 +18,7 @@ function makeStream(room) {
 	const opts = { track, follow, stall_warnings: true }
 	const stream = T.stream('statuses/filter', opts)
 	stream.on('message', (message) => {
-		if (message.type !== 'tweet') {
+		if (!message.source) {
 			console.log(`[${room}] ${JSON.stringify(message)}`)
 		}
 	})
@@ -90,15 +90,15 @@ io.on('connection', (socket) => {
 		makeStream(room)
 	})
 
-	if (configs[room]) {
-		socket.emit('config', configs[room])
-		if (!streams[room]) {
-			makeStream(room)
-		}
+	socket.emit('config', configs[room])
+	if (configs[room] && !streams[room]) {
+		makeStream(room)
 	}
 
 	socket.on('stop', () => {
 		stopStream(room)
+		delete configs[room]
+		socket.emit('config', { track: '', follow: '' })
 	})
 
 	socket.on('disconnect', () => {

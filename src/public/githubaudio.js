@@ -114,7 +114,7 @@ $(function(){
   // For window resizes
   var update_window = function() {
       width = window.innerWidth || element.clientWidth || drawingArea.clientWidth;
-      height = (window.innerHeight  - $('header').height())|| (element.clientHeight - $('header').height()) || (drawingArea.clientHeight - $('header').height());
+      height = ((window.innerHeight  - $('header').height())|| (element.clientHeight - $('header').height()) || (drawingArea.clientHeight - $('header').height())) - 20;
       svg.attr("width", width).attr("height", height);
   }
   window.onresize = update_window;

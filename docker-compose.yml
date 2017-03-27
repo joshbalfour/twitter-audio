@@ -7,7 +7,7 @@ services:
     volumes:
       - ./src:/src
     ports:
-      - 1337:80
+      - 3497:80
     working_dir: /src
     command: "npm run start"
     env_file: ./secrets.env

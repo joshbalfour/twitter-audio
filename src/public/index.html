@@ -1,24 +1,47 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 		<title>Listen to Twitter</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+		<link rel="stylesheet" type="text/css" href="/githubaudio.css">
 		<link rel="stylesheet" type="text/css" href="/styles.css">
+
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/themes/odometer-theme-default.min.css" />
+    	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" />
 	</head>
 	<body>
 		<header>
-			Listen to Twitter
-			<div class="config">
-				<form id="trackForm">
-					<input placeholder="enter keyword to track" id="track" />
-				</form>
-				<button role="button" id="stop">stop</button>
-			</div>
-			<h1>Tracking: <span id="tracking"></span></h1>
-			<div id="volumeSlider"></div>
+			<h1 class="h1">
+				<span id="tracking"></span>
+				<span id="tracking-phrase"></span>
+				<div class="config">
+					<form id="trackForm">
+						<input placeholder="enter keyword to track" id="track" class="form-control" />
+					</form>
+					<button role="button" id="edit" class="btn btn-secondary">edit</button>
+					<button role="button" id="stop" class="btn btn-danger">stop</button>
+					<button role="button" id="start" class="btn btn-success">(re)start</button>
+					<button role="button" id="cancel" class="btn btn-secondary">cancel</button>
+				</div>
+			</h1>
+			<nav class="nav">
+				<a class="navbar-brand lstn" href="#">
+					Listen to Twitter
+				</a>
+				<span class="volumeContainer">
+					<span class="volumeLabel">volume:</span>
+					<span class="navbar-text">
+						<div id="volumeSlider"></div>
+					</span>
+				</span>
+			</nav>
 		</header>
 		<div id="area"></div>
-		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/themes/odometer-theme-default.min.css" />
-    	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" />
+
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
